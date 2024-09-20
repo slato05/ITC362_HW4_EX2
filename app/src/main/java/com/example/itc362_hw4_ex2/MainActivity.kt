@@ -12,8 +12,6 @@ private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
 
-    var scoreTeamA = 0
-    var scoreTeamB = 0
     private lateinit var binding: ActivityMainBinding
     private val counterViewModel: CounterViewModel by viewModels()
 
@@ -23,64 +21,75 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         Log.d(TAG, "Got a CounterViewModel: $counterViewModel")
+
+        // Display the scores for each team upon onCreate() function call
+        displayForTeamA(counterViewModel.scoreTeamA)
+        displayForTeamB(counterViewModel.scoreTeamB)
     }
 
     /**
      * Increase the score for Team A by 1 point.
      */
     fun addOneForTeamA(v: View?) {
-        scoreTeamA++
-        displayForTeamA(scoreTeamA)
+        //use scoreTeamA variable from counterViewModel
+        counterViewModel.scoreTeamA++
+        displayForTeamA(counterViewModel.scoreTeamA)
     }
 
     /**
      * Increase the score for Team A by 2 points.
      */
     fun addTwoForTeamA(v: View?) {
-        scoreTeamA += 2
-        displayForTeamA(scoreTeamA)
+        //use scoreTeamA variable from counterViewModel
+        counterViewModel.scoreTeamA += 2
+        displayForTeamA(counterViewModel.scoreTeamA)
     }
 
     /**
      * Increase the score for Team A by 3 points.
      */
     fun addThreeForTeamA(v: View?) {
-        scoreTeamA += 3
-        displayForTeamA(scoreTeamA)
+        //use scoreTeamA variable from counterViewModel
+        counterViewModel.scoreTeamA += 3
+        displayForTeamA(counterViewModel.scoreTeamA)
     }
 
     /**
      * Increase the score for Team B by 1 point.
      */
     fun addOneForTeamB(v: View?) {
-        scoreTeamB++
-        displayForTeamB(scoreTeamB)
+        //use scoreTeamB variable from counterViewModel
+        counterViewModel.scoreTeamB++
+        displayForTeamB(counterViewModel.scoreTeamB)
     }
 
     /**
      * Increase the score for Team B by 2 points.
      */
     fun addTwoForTeamB(v: View?) {
-        scoreTeamB += 2
-        displayForTeamB(scoreTeamB)
+        //use scoreTeamB variable from counterViewModel
+        counterViewModel.scoreTeamB += 2
+        displayForTeamB(counterViewModel.scoreTeamB)
     }
 
     /**
      * Increase the score for Team B by 3 points.
      */
     fun addThreeForTeamB(v: View?) {
-        scoreTeamB += 3
-        displayForTeamB(scoreTeamB)
+        //use scoreTeamB variable from counterViewModel
+        counterViewModel.scoreTeamB += 3
+        displayForTeamB(counterViewModel.scoreTeamB)
     }
 
     /**
      * Resets the score for both teams back to 0.
      */
     fun resetScore(v: View?) {
-        scoreTeamA = 0
-        scoreTeamB = 0
-        displayForTeamA(scoreTeamA)
-        displayForTeamB(scoreTeamB)
+        //reset scoreTeamA and scoreTeamB variables from counterViewModel
+        counterViewModel.scoreTeamA = 0
+        counterViewModel.scoreTeamB = 0
+        displayForTeamA(counterViewModel.scoreTeamA)
+        displayForTeamB(counterViewModel.scoreTeamB)
     }
 
     /**
